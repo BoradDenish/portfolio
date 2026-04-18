@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
 const skills = {
-  backend: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'REST APIs', 'GraphQL', 'WebSockets', 'Socket.IO'],
+  backend: ['Python', 'FastAPI', 'Django', 'Django REST Framework', 'REST APIs', 'GraphQL', 'WebSockets', 'Socket.IO', 'NodeJS', 'ReactJS', 'PyQt'],
   database: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB', 'Redis'],
-  iot: ['TCP/IP Protocol', 'Socket.IO', 'IoT Integration', 'Real-time Data', 'Device Communication'],
+  iot: ['TCP/IP Protocol', 'Socket.IO', 'Real-time Data', 'Device Communication'],
   tools: ['Git', 'GitHub', 'Docker', 'Postman', 'Nginx', 'Gunicorn'],
   server: ['Ubuntu Server', 'Apache', 'Nginx'],
   concepts: ['Authentication & Authorization', 'Payment Integration', 'Real-time Communication', 'Microservices', 'API Design', "Meta Api's Integration"]
@@ -31,7 +31,7 @@ const projects = [
   {
     title: 'Aqua Culture Management System',
     description: 'Comprehensive IoT-based aquaculture management platform for fish/prawn farming. Features real-time monitoring of pond parameters, automated motor control via IoT devices, and TCP-based communication between sensors and server.',
-    tech: ['Django', 'Django REST Framework', 'FastAPI', 'Socket.IO', 'TCP/IP', 'PostgreSQL', 'Redis', 'IoT Integration'],
+    tech: ['FastAPI', 'Python-Socket.IO', 'TCP/IP', 'MySQL', 'ReactJS'],
     github: '#',
     live: '#',
     stars: 0,
@@ -127,6 +127,13 @@ const experience = [
 ]
 
 const education = [
+  {
+    degree: 'Master of Science in Information Technology (M.Sc. IT)',
+    institution: 'Saurashtra University',
+    period: '2024 - 2026',
+    grade: 'Result Awaited',
+    highlights: ['Final Semester Exam Completed']
+  },
   {
     degree: 'Bachelor of Computer Applications (BCA)',
     institution: 'Saurashtra University',
@@ -614,28 +621,41 @@ function Education() {
               </span>
               Education
             </h3>
-            {education.map((edu, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-6 card-hover border border-gray-100">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900">{edu.degree}</h4>
-                    <p className="text-indigo-600 font-medium">{edu.institution}</p>
+            
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-indigo-200"></div>
+              
+              {education.map((edu, index) => (
+                <div key={index} className="relative pl-10 mb-6 last:mb-0">
+                  <div className="absolute left-2.5 w-3 h-3 bg-indigo-600 rounded-full border-2 border-white"></div>
+                  <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 card-hover border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div className="flex justify-between items-start mb-3">
+                      <div className="flex-1">
+                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${
+                          edu.grade === 'Result Awaited' 
+                            ? 'bg-amber-100 text-amber-700' 
+                            : 'bg-green-100 text-green-700'
+                        }`}>
+                          {edu.grade}
+                        </span>
+                        <h4 className="text-lg font-bold text-gray-900">{edu.degree}</h4>
+                        <p className="text-indigo-600 font-medium text-sm">{edu.institution}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm font-semibold text-gray-800">{edu.period}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.highlights.map((highlight, i) => (
+                        <span key={i} className="px-2 py-1 bg-indigo-50 text-indigo-700 rounded-md text-xs font-medium">
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                    {edu.grade}
-                  </span>
                 </div>
-                <p className="text-gray-600 text-sm mb-3">{edu.period}</p>
-                <ul className="space-y-2">
-                  {edu.highlights.map((highlight, i) => (
-                    <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div>
@@ -647,23 +667,39 @@ function Education() {
             </h3>
             <div className="space-y-4">
               {certifications.map((cert, index) => (
-                <div key={index} className="bg-gray-50 rounded-xl p-4 card-hover border border-gray-100 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{cert.name}</h4>
-                    <p className="text-sm text-gray-600">{cert.issuer}</p>
+                <div key={index} className="bg-gray-50 rounded-xl p-4 card-hover border border-gray-100 flex items-center justify-between hover:border-green-300 transition-colors group">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{cert.name}</h4>
+                      <p className="text-sm text-gray-600">{cert.issuer}</p>
+                    </div>
                   </div>
-                  <span className="text-sm text-gray-500">{cert.year}</span>
+                  <span className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">{cert.year}</span>
                 </div>
               ))}
             </div>
             
-            <div className="mt-8 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl">
-              <h4 className="font-bold mb-2">Tech Stack Summary</h4>
-              <p className="text-sm text-gray-600 mb-4">Primary technologies I work with daily</p>
+            <div className="mt-8 p-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-600 rounded-2xl text-white">
+              <h4 className="font-bold mb-2">Core Competencies</h4>
+              <p className="text-sm opacity-90 mb-4">Technologies I work with professionally</p>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'FastAPI', 'Django', 'DRF', 'TCP/IP', 'Socket.IO', 'PostgreSQL', 'Ubuntu'].map((tech) => (
-                  <span key={tech} className="px-3 py-1 bg-white text-gray-700 rounded-lg text-sm font-medium border border-gray-200">{tech}</span>
+                {['Python', 'FastAPI', 'Django', 'DRF', 'TCP/IP', 'Socket.IO', 'PostgreSQL', 'Ubuntu', 'Git Version', 'MySQL'].map((tech) => (
+                  <span key={tech} className="px-3 py-1 bg-white/20 text-white rounded-lg text-sm font-medium backdrop-blur-sm">{tech}</span>
                 ))}
+              </div>
+            </div>
+            
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-indigo-600">2.8+</div>
+                <div className="text-sm text-gray-600">Years Experience</div>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold text-green-600">15+</div>
+                <div className="text-sm text-gray-600">APIs Built</div>
               </div>
             </div>
           </div>
