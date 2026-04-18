@@ -884,7 +884,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <div className="text-2xl font-bold mb-2 gradient-text-footer">Denish Borad</div>
-            <p className="text-gray-400">Python Backend Developer | FastApi | Django | DRF | Socket.io | Celery | RDBMS</p>
+            <p className="text-gray-400">Python Backend Developer | FastApi | Django | DRF | Socket.io | Celery | RDBMS | NodeJS | ReactJS</p>
           </div>
           
           <div className="flex gap-6">
@@ -902,7 +902,7 @@ function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} Denish Borad.</p>
-          <p className="mt-2">Open to Python Backend & Django, DRF & FastApi Developer | Gujarat, India</p>
+          <p className="mt-2">Open to Python Backend & Django, DRF & FastApi Developer | Rajkot, Gujarat, India</p>
         </div>
       </div>
     </footer>
