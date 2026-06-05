@@ -131,7 +131,7 @@ const education = [
     degree: 'Master of Science in Information Technology (M.Sc. IT)',
     institution: 'Saurashtra University',
     period: '2024 - 2026',
-    grade: 'Result Awaited',
+    grade: '8.71 CGPA (First Distinction)',
     highlights: ['Final Semester Exam Completed']
   },
   {
