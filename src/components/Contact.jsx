@@ -62,11 +62,11 @@ export default function Contact() {
       <div ref={ref} className={`max-w-6xl mx-auto px-6 ${isRevealed ? '' : 'opacity-0'}`}>
         <div className={`text-center mb-16 ${isRevealed ? 'reveal revealed' : 'reveal'}`}>
           <span className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 block">Get in Touch</span>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Let&apos;s Work Together</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Let&apos;s Work Together</h2>
           <p className="text-gray-400 dark:text-gray-400 mt-4 max-w-2xl mx-auto">I&apos;m currently open to new opportunities in Python Backend Development and IoT Integration. Let&apos;s connect!</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div className={`${isRevealed ? 'reveal-left revealed' : 'reveal-left'}`}>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Quick ways to reach me</h3>
             
@@ -81,7 +81,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-sm text-gray-500 dark:text-gray-400">{method.label}</div>
-                      <div className="font-medium text-gray-800 dark:text-gray-200">{method.value}</div>
+                      <div className="font-medium text-gray-800 dark:text-gray-200 text-sm md:text-base truncate">{method.value}</div>
                     </div>
                   </Wrapper>
                 )

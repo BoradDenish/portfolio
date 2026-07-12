@@ -27,7 +27,7 @@ export default function Skills() {
       <div ref={ref} className={`max-w-6xl mx-auto px-6 ${isRevealed ? '' : 'opacity-0'}`}>
         <div className={`text-center mb-16 ${isRevealed ? 'reveal revealed' : 'reveal'}`}>
           <span className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 block">What I know</span>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Skills & Technologies</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -51,7 +51,7 @@ export default function Skills() {
         </div>
 
         <div className={`mt-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-600 rounded-2xl p-8 text-white shadow-xl ${isRevealed ? 'reveal revealed' : 'reveal'}`}>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
             <div className="text-center hover:scale-110 transition-transform">
               <div className="text-3xl font-bold">2.8+</div>
               <div className="text-sm opacity-80">Years Experience</div>

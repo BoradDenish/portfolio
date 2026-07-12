@@ -10,10 +10,10 @@ export default function Education() {
       <div ref={ref} className={`max-w-6xl mx-auto px-6 ${isRevealed ? '' : 'opacity-0'}`}>
         <div className={`text-center mb-16 ${isRevealed ? 'reveal revealed' : 'reveal'}`}>
           <span className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 block">My Background</span>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Education & Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Education & Certifications</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <div className={`${isRevealed ? 'reveal-left revealed' : 'reveal-left'}`}>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
               <span className="w-10 h-10 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg flex items-center justify-center">

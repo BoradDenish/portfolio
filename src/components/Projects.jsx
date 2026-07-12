@@ -11,7 +11,7 @@ export default function Projects() {
       <div ref={ref} className={`max-w-6xl mx-auto px-6 ${isRevealed ? '' : 'opacity-0'}`}>
         <div className={`text-center mb-16 ${isRevealed ? 'reveal revealed' : 'reveal'}`}>
           <span className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 block">My Work</span>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Featured Projects</h2>
           <p className="text-gray-400 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Backend systems with IoT integration, real-time communication, and server deployment</p>
         </div>
 

@@ -51,7 +51,7 @@ export default function About() {
           
           <div className={`${isRevealed ? 'reveal-right revealed' : 'reveal-right'}`}>
             <span className="text-indigo-600 dark:text-indigo-400 font-medium mb-2 block">Get to know me</span>
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
             <p className="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
               I'm a <span className="font-semibold text-gray-800 dark:text-gray-200">Python Backend Developer</span> with <span className="font-semibold text-gray-800 dark:text-gray-200">2.8+ years</span> of experience in building scalable backend systems. Currently working at <span className="font-semibold text-gray-800 dark:text-gray-200">Inlancer Technologies Pvt Ltd</span>.
             </p>
@@ -62,7 +62,7 @@ export default function About() {
               My expertise includes <span className="font-semibold text-gray-700 dark:text-gray-300">server administration</span> on both Ubuntu and Windows servers, handling pull, build, and deployment operations. I've worked extensively with IoT devices for aqua culture management systems.
             </p>
             
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-3 gap-3 md:gap-4 mb-8">
               <div className="bg-gradient-to-br from-indigo-50 to-indigo-100/60 dark:from-indigo-500/10 dark:to-indigo-500/5 rounded-2xl p-4 text-center hover:shadow-md transition-shadow border border-indigo-100/70 dark:border-indigo-500/10">
                 <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{yearsCount}+</div>
                 <div className="text-gray-500 dark:text-gray-400 text-sm">Years Exp.</div>
