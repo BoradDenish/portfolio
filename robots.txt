@@ -1,5 +1,5 @@
-# robots.txt - https://BoradDenish.github.io/portfolio
+# robots.txt - https://denish-borad.vercel.app
 User-agent: *
 Allow: /
 
-Sitemap: https://BoradDenish.github.io/portfolio/sitemap.xml
+Sitemap: https://denish-borad.vercel.app/sitemap.xml
