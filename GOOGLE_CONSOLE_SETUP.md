@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-- Your site is deployed at: `https://BoradDenish.github.io/portfolio/`
+- Your site is deployed at: `https://denish-borad.vercel.app/`
 - `sitemap.xml` and `robots.txt` are in the `public/` folder (will be deployed to your site root)
 
 ---
@@ -25,7 +25,7 @@
 2. Choose **"URL prefix"** (recommended for GitHub Pages)
 3. Enter your full site URL:
    ```
-   https://BoradDenish.github.io/portfolio/
+   https://denish-borad.vercel.app/
    ```
 4. Click **"Continue"**
 
@@ -78,7 +78,7 @@
 6. Go back to Google Console and click **"Verify"**
 
 > **Important:** The HTML file must be accessible at:
-> `https://BoradDenish.github.io/portfolio/googleAbCdEf123.html`
+> `https://denish-borad.vercel.app/googleAbCdEf123.html`
 
 ### Method C: DNS Record (Best for custom domains)
 
@@ -106,7 +106,7 @@
 1. In the left sidebar, click **"URL Inspection"**
 2. Enter your page URL:
    ```
-   https://BoradDenish.github.io/portfolio/
+   https://denish-borad.vercel.app/
    ```
 3. Click **"Request Indexing"**
 4. Wait for Google to process (can take a few minutes to 24 hours)
@@ -121,7 +121,7 @@
    User-agent: *
    Allow: /
 
-   Sitemap: https://BoradDenish.github.io/portfolio/sitemap.xml
+   Sitemap: https://denish-borad.vercel.app/sitemap.xml
    ```
 3. Make sure there are no errors
 
@@ -204,9 +204,9 @@ git push origin main
 - [ ] `robots.txt` created in `public/`
 - [ ] Google verification meta tag added to `index.html` `<head>`
 - [ ] All files deployed to GitHub
-- [ ] Site accessible at `https://BoradDenish.github.io/portfolio/`
-- [ ] Sitemap accessible at `https://BoradDenish.github.io/portfolio/sitemap.xml`
-- [ ] Robots.txt accessible at `https://BoradDenish.github.io/portfolio/robots.txt`
+- [ ] Site accessible at `https://denish-borad.vercel.app/`
+- [ ] Sitemap accessible at `https://denish-borad.vercel.app/sitemap.xml`
+- [ ] Robots.txt accessible at `https://denish-borad.vercel.app/robots.txt`
 - [ ] Google Search Console account created
 - [ ] Property added with correct URL
 - [ ] Ownership verified
