@@ -1,0 +1,5 @@
+# robots.txt - https://BoradDenish.github.io/portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://BoradDenish.github.io/portfolio/sitemap.xml
