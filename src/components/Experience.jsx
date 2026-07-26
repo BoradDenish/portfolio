@@ -1,8 +1,18 @@
 import useScrollReveal from '../hooks/useScrollReveal'
+import useSEO from '../hooks/useSEO'
 import experience from '../data/experience'
 
 export default function Experience() {
   const [ref, isRevealed] = useScrollReveal({ threshold: 0.1 })
+
+  useSEO({
+    title: 'Work Experience',
+    description: 'Work experience of Denish Borad - Python Backend Developer at Inlancer Technologies Pvt Ltd. Building Django/FastAPI backends, IoT integration with TCP/Socket.IO, and server administration.',
+    keywords: 'Denish Borad Experience, Python Developer Work, Django Developer Experience, Inlancer Technologies, IoT Developer, Backend Developer Job',
+    url: 'https://denish-borad.vercel.app/experience',
+    ogTitle: 'Work Experience | Denish Borad',
+    ogDescription: 'Python Backend Developer at Inlancer Technologies - Django, FastAPI, IoT Integration.',
+  })
 
   return (
     <section id="experience" className="py-24 bg-[#f5f6fa] dark:bg-slate-950 relative transition-colors duration-300 section-glow overflow-x-hidden">

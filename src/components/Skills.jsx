@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
+import useSEO from '../hooks/useSEO'
 import skills from '../data/skills'
 
 const skillCategories = [
@@ -21,6 +23,15 @@ const colorMap = {
 
 export default function Skills() {
   const [ref, isRevealed] = useScrollReveal({ threshold: 0.1 })
+
+  useSEO({
+    title: 'Skills & Technologies',
+    description: 'Skills and technologies used by Denish Borad: Python, Django, FastAPI, PostgreSQL, MongoDB, IoT (TCP/Socket.IO), Ubuntu/Windows Server Administration, Docker, Git, and more.',
+    keywords: 'Python Skills, Django Skills, FastAPI Skills, Backend Developer Skills, IoT Skills, Socket.IO, TCP/IP, PostgreSQL, MongoDB, Ubuntu Server',
+    url: 'https://denish-borad.vercel.app/skills',
+    ogTitle: 'Skills & Technologies | Denish Borad',
+    ogDescription: 'Python, Django, FastAPI, IoT, PostgreSQL, MongoDB, Ubuntu Server, and more.',
+  })
 
   return (
     <section id="skills" className="py-24 bg-[#f5f6fa] dark:bg-slate-950 relative transition-colors duration-300 section-glow">

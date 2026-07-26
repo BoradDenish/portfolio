@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 
-export default function Navbar({ activeSection }) {
+export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -20,26 +22,39 @@ export default function Navbar({ activeSection }) {
     return () => { document.body.style.overflow = '' }
   }, [mobileMenuOpen])
 
-  const navLinks = ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact']
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'Education', path: '/education' },
+    { label: 'Contact', path: '/contact' },
+  ]
+
+  const isActive = (path) => {
+    if (path === '/') return location.pathname === '/'
+    return location.pathname === path
+  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass shadow-smooth py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300">DB</a>
+        <Link to="/" className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300">DB</Link>
 
         <ul className="hidden md:flex gap-1">
           {navLinks.map((link) => (
-            <li key={link}>
-              <a 
-                href={`#${link.toLowerCase()}`} 
+            <li key={link.path}>
+              <Link 
+                to={link.path} 
                 className={`nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  activeSection === link.toLowerCase() 
+                  isActive(link.path)
                     ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 nav-link' 
                     : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-[#eef0f6] dark:hover:bg-gray-800'
                 }`}
               >
-                {link}
-              </a>
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -74,18 +89,18 @@ export default function Navbar({ activeSection }) {
             </div>
             <ul className="space-y-1">
               {navLinks.map((link, i) => (
-                <li key={link} style={{ animationDelay: `${i * 50}ms` }} className={`${mobileMenuOpen ? 'fade-in-up' : ''}`}>
-                  <a 
-                    href={`#${link.toLowerCase()}`} 
+                <li key={link.path} style={{ animationDelay: `${i * 50}ms` }} className={`${mobileMenuOpen ? 'fade-in-up' : ''}`}>
+                  <Link 
+                    to={link.path} 
                     className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
-                      activeSection === link.toLowerCase() 
+                      isActive(link.path)
                         ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10' 
                         : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-[#eef0f6] dark:hover:bg-gray-800'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

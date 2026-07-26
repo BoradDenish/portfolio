@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal'
+import useSEO from '../hooks/useSEO'
 
 export default function About() {
   const [ref, isRevealed] = useScrollReveal({ threshold: 0.15 })
@@ -7,6 +9,15 @@ export default function About() {
   const [apisCount, setApisCount] = useState(0)
   const [cgpaCount, setCgpaCount] = useState(0)
   const startedRef = useRef(false)
+
+  useSEO({
+    title: 'About',
+    description: 'Learn about Denish Borad - Python Backend Developer with 2.8+ years of experience in Django, FastAPI, IoT Integration, and Server Administration at Inlancer Technologies.',
+    keywords: 'Denish Borad, Python Developer About, Backend Developer Gujarat, Django Developer India, FastAPI Developer',
+    url: 'https://denish-borad.vercel.app/about',
+    ogTitle: 'About Denish Borad | Python Backend Developer',
+    ogDescription: '2.8+ years experience in Django, FastAPI, IoT Integration, and Server Administration.',
+  })
 
   useEffect(() => {
     if (!isRevealed || startedRef.current) return

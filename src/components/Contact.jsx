@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
+import useSEO from '../hooks/useSEO'
 
 const contactMethods = [
   { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', color: 'indigo', label: 'Email', value: 'danishpatel5106@gmail.com', href: 'mailto:danishpatel5106@gmail.com', type: 'link' },
@@ -20,6 +21,15 @@ export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  useSEO({
+    title: 'Contact',
+    description: 'Get in touch with Denish Borad - Python Backend Developer. Available for opportunities in Django, FastAPI, IoT Integration, and Server Administration.',
+    keywords: 'Contact Denish Borad, Python Developer Contact, Hire Python Developer, Django Developer Rajkot, Backend Developer India',
+    url: 'https://denish-borad.vercel.app/contact',
+    ogTitle: 'Contact Denish Borad | Python Backend Developer',
+    ogDescription: 'Available for Python Backend Development and IoT Integration opportunities.',
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault()

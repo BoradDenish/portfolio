@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from './hooks/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -9,53 +9,41 @@ import Experience from './components/Experience'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import WaveDivider from './components/WaveDivider'
 import ScrollToTop from './components/ScrollToTop'
+import { useEffect } from 'react'
 
-export default function App() {
-  const [activeSection, setActiveSection] = useState('hero')
-
+function ScrollToTopOnRoute() {
+  const { pathname } = useLocation()
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'education', 'contact']
-      const scrollPos = window.scrollY + 100
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const offsetTop = element.offsetTop
-          const offsetHeight = element.offsetHeight
-          if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
+function Layout({ children }) {
   return (
-    <ThemeProvider>
-      <Navbar activeSection={activeSection} />
-      <Hero />
-      <WaveDivider color="#ffffff" darkColor="#1e293b" />
-      <About />
-      <WaveDivider color="#f5f6fa" darkColor="#0f172a" flip />
-      <Skills />
-      <WaveDivider color="#ffffff" darkColor="#1e293b" />
-      <Projects />
-      <WaveDivider color="#f5f6fa" darkColor="#0f172a" />
-      <Experience />
-      <WaveDivider color="#ffffff" darkColor="#1e293b" />
-      <Education />
-      <WaveDivider color="#f5f6fa" darkColor="#0f172a" />
-      <Contact />
-      <WaveDivider color="#111827" darkColor="#0a0f1a" />
+    <>
+      <Navbar />
+      {children}
       <Footer />
       <ScrollToTop />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <ScrollToTopOnRoute />
+      <Routes>
+        <Route path="/" element={<Layout><Hero /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/skills" element={<Layout><Skills /></Layout>} />
+        <Route path="/projects" element={<Layout><Projects /></Layout>} />
+        <Route path="/experience" element={<Layout><Experience /></Layout>} />
+        <Route path="/education" element={<Layout><Education /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+      </Routes>
     </ThemeProvider>
   )
 }
