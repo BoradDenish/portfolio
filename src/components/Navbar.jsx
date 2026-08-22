@@ -1,11 +1,22 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect, useCallback } from 'react'
 import ThemeToggle from './ThemeToggle'
+
+const navLinks = [
+  { label: 'Home', id: 'home' },
+  { label: 'About', id: 'about' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Education', id: 'education' },
+  { label: 'Contact', id: 'contact' },
+]
+
+const NAVBAR_OFFSET = 80
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const location = useLocation()
+  const [activeId, setActiveId] = useState('home')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -22,46 +33,65 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [mobileMenuOpen])
 
-  const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Skills', path: '/skills' },
-    { label: 'Projects', path: '/projects' },
-    { label: 'Experience', path: '/experience' },
-    { label: 'Education', path: '/education' },
-    { label: 'Contact', path: '/contact' },
-  ]
+  useEffect(() => {
+    const sections = navLinks
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean)
 
-  const isActive = (path) => {
-    if (path === '/') return location.pathname === '/'
-    return location.pathname === path
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: `-${NAVBAR_OFFSET + 10}px 0px -60% 0px`, threshold: 0 }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  const scrollToSection = useCallback((id) => {
+    const el = document.getElementById(id)
+    if (!el) return
+    const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_OFFSET
+    window.scrollTo({ top, behavior: 'smooth' })
+    setMobileMenuOpen(false)
+  }, [])
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault()
+    scrollToSection(id)
   }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass shadow-smooth py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300">DB</Link>
+        <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300">DB</a>
 
         <ul className="hidden md:flex gap-1">
           {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link 
-                to={link.path} 
+            <li key={link.id}>
+              <a
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
                 className={`nav-link px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  isActive(link.path)
-                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 nav-link' 
+                  activeId === link.id
+                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 nav-link'
                     : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-[#eef0f6] dark:hover:bg-gray-800'
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <button 
+          <button
             className="md:hidden p-2 rounded-lg hover:bg-[#eef0f6] dark:hover:bg-gray-800 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
@@ -89,18 +119,18 @@ export default function Navbar() {
             </div>
             <ul className="space-y-1">
               {navLinks.map((link, i) => (
-                <li key={link.path} style={{ animationDelay: `${i * 50}ms` }} className={`${mobileMenuOpen ? 'fade-in-up' : ''}`}>
-                  <Link 
-                    to={link.path} 
+                <li key={link.id} style={{ animationDelay: `${i * 50}ms` }} className={`${mobileMenuOpen ? 'fade-in-up' : ''}`}>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => handleNavClick(e, link.id)}
                     className={`block px-4 py-3 rounded-xl font-medium transition-all duration-200 ${
-                      isActive(link.path)
-                        ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10' 
+                      activeId === link.id
+                        ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10'
                         : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-[#eef0f6] dark:hover:bg-gray-800'
                     }`}
-                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

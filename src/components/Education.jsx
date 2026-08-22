@@ -1,19 +1,9 @@
 import useScrollReveal from '../hooks/useScrollReveal'
-import useSEO from '../hooks/useSEO'
 import education from '../data/education'
 import certifications from '../data/certifications'
 
 export default function Education() {
   const [ref, isRevealed] = useScrollReveal({ threshold: 0.1 })
-
-  useSEO({
-    title: 'Education & Certifications',
-    description: 'Education background and certifications of Denish Borad - M.Sc IT, BCA, and professional certifications in Python, Django, and web development.',
-    keywords: 'Denish Borad Education, M.Sc IT, BCA, Python Certification, Django Certification, Web Development Certificate, Gujarat University',
-    url: 'https://denish-borad.vercel.app/education',
-    ogTitle: 'Education & Certifications | Denish Borad',
-    ogDescription: 'M.Sc IT, BCA, and professional certifications in Python and web development.',
-  })
 
   return (
     <section id="education" className="py-24 bg-white dark:bg-slate-900 relative transition-colors duration-300 section-glow">

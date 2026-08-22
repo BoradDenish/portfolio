@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { scrollToSection } from '../utils/scroll'
 import useScrollReveal from '../hooks/useScrollReveal'
 import useSEO from '../hooks/useSEO'
 
@@ -8,14 +8,14 @@ export default function Hero() {
   useSEO({
     title: null,
     description: 'Denish Borad - Python Backend Developer with 2.8+ years of experience in Django, FastAPI, IoT Integration (TCP/Socket.IO), and Server Administration (Ubuntu/Windows). Currently at Inlancer Technologies.',
-    keywords: 'Python Developer, Django Developer, FastAPI Developer, Backend Developer, IoT Integration, TCP/IP, Socket.IO, REST API, Inlancer Technologies, Gujarat, India',
+    keywords: 'Python Developer, Django Developer, FastAPI Developer, Backend Developer, IoT Integration, TCP/IP, Socket.IO, REST API, Inlancer Technologies, Gujarat, India, About, Skills, Projects, Experience, Education, Contact',
     url: 'https://denish-borad.vercel.app/',
     ogTitle: 'Denish Borad | Python Backend Developer',
     ogDescription: 'Python Backend Developer with 2.8+ years in Django, FastAPI, IoT Integration, and Server Administration. Open to opportunities.',
   })
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#f5f6fa] via-white to-indigo-50/60 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/30 grid-pattern section-glow">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#f5f6fa] via-white to-indigo-50/60 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950/30 grid-pattern section-glow">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-20 w-72 h-72 bg-indigo-200/30 dark:bg-indigo-500/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 animate-float"></div>
         <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-200/30 dark:bg-purple-500/20 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
@@ -41,13 +41,13 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-14">
-          <Link to="/projects" className="group px-8 py-3.5 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-500 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2">
+          <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects') }} className="group px-8 py-3.5 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-500 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 flex items-center gap-2">
             View Projects
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </Link>
-          <Link to="/contact" className="px-8 py-3.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-medium hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:shadow-md">
+          </a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact') }} className="px-8 py-3.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-medium hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:shadow-md">
             Get In Touch
-          </Link>
+          </a>
           <a href="https://github.com/BoradDenish" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 bg-gray-900 dark:bg-gray-800 text-white rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-300 flex items-center gap-2 hover:shadow-lg">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             GitHub

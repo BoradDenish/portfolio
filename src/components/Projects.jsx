@@ -1,20 +1,10 @@
 import { useState } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
-import useSEO from '../hooks/useSEO'
 import projects from '../data/projects'
 
 export default function Projects() {
   const [ref, isRevealed] = useScrollReveal({ threshold: 0.05 })
   const [expandedIndex, setExpandedIndex] = useState(null)
-
-  useSEO({
-    title: 'Projects',
-    description: 'Featured projects by Denish Borad - IoT integration systems, real-time communication platforms, Django/FastAPI backend projects, and server deployment solutions.',
-    keywords: 'Python Projects, Django Projects, FastAPI Projects, IoT Projects, Backend Projects, Real-time Communication, Socket.IO Projects',
-    url: 'https://denish-borad.vercel.app/projects',
-    ogTitle: 'Projects | Denish Borad',
-    ogDescription: 'IoT integration, real-time communication, and Django/FastAPI backend projects.',
-  })
 
   return (
     <section id="projects" className="py-24 bg-white dark:bg-slate-900 relative transition-colors duration-300 section-glow">
