@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.3",
   "type": "module",
-  "homepage": "https://boraddenish.github.io",
+  "homepage": "https://boraddenish.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
