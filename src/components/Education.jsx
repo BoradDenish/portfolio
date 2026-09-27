@@ -86,7 +86,7 @@ export default function Education() {
               <h4 className="font-bold mb-2">Core Competencies</h4>
               <p className="text-sm opacity-90 mb-4">Technologies I work with professionally</p>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'FastAPI', 'Django', 'DRF', 'TCP/IP', 'Socket.IO', 'PostgreSQL', 'Ubuntu', 'Git Version', 'MySQL'].map((tech) => (
+                {['Python', 'FastAPI', 'Django', 'Rust (Axum)', 'DRF', 'Celery', 'Redis', 'TCP/IP Sockets', 'Socket.IO', 'PostgreSQL', 'Ubuntu', 'AWS EC2', 'MySQL'].map((tech) => (
                   <span key={tech} className="px-3 py-1 bg-white/20 text-white rounded-lg text-sm font-medium backdrop-blur-sm hover:bg-white/30 transition-colors cursor-default">{tech}</span>
                 ))}
               </div>
@@ -94,7 +94,7 @@ export default function Education() {
             
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div className="bg-gradient-to-br from-indigo-50 to-indigo-100/60 dark:from-indigo-500/10 dark:to-indigo-500/5 rounded-xl p-4 text-center hover:shadow-md transition-shadow border border-indigo-100/70 dark:border-indigo-500/10">
-                <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">2.8+</div>
+                <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">3+</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">Years Experience</div>
               </div>
               <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/60 dark:from-emerald-500/10 dark:to-emerald-500/5 rounded-xl p-4 text-center hover:shadow-md transition-shadow border border-emerald-100/70 dark:border-emerald-500/10">

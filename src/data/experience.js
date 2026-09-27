@@ -1,28 +1,28 @@
 const experience = [
   {
-    role: 'Python Backend Developer',
+    role: 'Backend & Systems Engineer',
     company: 'Inlancer Technologies Pvt Ltd',
     period: 'Aug 2022 - Present',
-    description: 'Developing robust backend systems using Python frameworks (Django, FastAPI). Building IoT-integrated applications, managing server infrastructure, and handling real-time data communication.',
+    description: 'Architecting high-throughput backend services, distributed systems, IoT edge communication pipelines, and cloud deployments across enterprise logistics, housing ERP, dining, and aquaculture.',
     highlights: [
-      '2.8+ years of professional experience',
-      'IoT Integration with TCP/IP & Socket.IO',
-      'Built 15+ production APIs',
-      'Server deployment on Ubuntu & Windows',
-      'Real-time data processing from IoT devices',
-      'Reduced API response time by 40%'
+      '3+ years of professional backend & systems engineering experience',
+      'Architected and deployed 15+ production-grade REST APIs and microservices',
+      'Engineered low-latency raw TCP/IP, WebSockets & Socket.IO telemetry pipelines for hardware devices',
+      'Integrated Celery & Redis distributed queues, reducing peak endpoint response times by 40%+',
+      'Built multi-provider tokenized payment vaulting (Stripe, PayPal Vault, Razorpay)',
+      'Managed production cloud deployments on Ubuntu AWS EC2 with Nginx, Gunicorn, systemd & CI/CD'
     ]
   },
   {
-    role: 'Python Developer Intern',
+    role: 'Backend Developer Intern',
     company: 'Inlancer Technologies Pvt Ltd',
     period: 'Jan 2022 - Jul 2022',
-    description: 'Contributed to backend development using Django and FastAPI. Learned industry best practices, API design patterns, and participated in full development lifecycle.',
+    description: 'Developed core RESTful endpoints using Django and FastAPI, adhering to clean architecture patterns, relational database schemas, and unit testing.',
     highlights: [
-      'Completed 8+ backend modules',
-      'REST API design & implementation',
-      'Database management with PostgreSQL',
-      'Version control with Git'
+      'Engineered 8+ scalable backend modules and RESTful endpoints',
+      'Modeled normalized relational databases with PostgreSQL and MySQL',
+      'Implemented secure JWT authentication and role-based access control (RBAC)',
+      'Collaborated using Git version control and Agile sprint methodologies'
     ]
   }
 ]

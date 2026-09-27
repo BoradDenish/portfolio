@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home') }} className="text-2xl font-bold mb-2 gradient-text-footer inline-block">Denish Borad</a>
-            <p className="text-gray-400">Python Backend Developer | FastApi | Django | DRF | Socket.io | Celery | RDBMS | NodeJS | ReactJS</p>
+            <p className="text-gray-400 text-sm">Backend & Systems Engineer | Python (FastAPI, Django) | Rust | Celery & Redis | IoT (TCP/Socket.IO) | AWS & Linux</p>
           </div>
           
           <div className="flex gap-4">
@@ -30,8 +30,8 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Denish Borad.</p>
-          <p className="mt-2">Open to Python Backend & Django, DRF & FastApi Developer | Rajkot, Gujarat, India</p>
+          <p>&copy; {new Date().getFullYear()} Denish Borad. All rights reserved.</p>
+          <p className="mt-2 text-xs text-gray-500">Open to Backend, Distributed Systems & IoT Engineering Opportunities | Rajkot, Gujarat, India</p>
         </div>
       </div>
     </footer>
