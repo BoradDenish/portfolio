@@ -1,16 +1,47 @@
-# React + Vite
+# Denish Borad — Backend & Systems Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> High-performance, SEO-first static portfolio website engineered with semantic HTML5, modern responsive CSS, and zero-dependency Vanilla JavaScript.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **SEO & Search Crawler Optimized**: Full content pre-rendered directly into semantic HTML (`index.html`) with rich Schema.org (JSON-LD) structured data (`Person`, `WebSite`, `ItemList`), Open Graph, Twitter Cards, robots.txt, and sitemaps.
+- **Instant Paint (100 Lighthouse Score)**: Zero client-side hydration delays or large JavaScript bundle overheads.
+- **Dark & Light Mode**: Instant, flicker-free theme detection with `localStorage` persistence and system `prefers-color-scheme` support.
+- **Interactive Projects Showcase**: Real-time technology search, category filtering, and interactive **Architecture & Deep Dive** modal dialogs for all 10 production systems.
+- **Interactive Metrics & Stats**: Animated counter benchmarks (3+ Years Experience, 15+ Production APIs, 8.71 M.Sc. IT CGPA) using cubic easing.
+- **Hardware & Distributed Systems Focus**: Showcases FastAPI, Django, Rust (Axum & Tokio), raw TCP/IP sockets, WebSockets, Socket.IO, Celery/Redis queues, and Ubuntu AWS EC2 cloud infrastructure.
+- **Working Contact Form**: Integrated with EmailJS for automated inquiries plus direct email fallback.
+- **Fully Responsive & Accessible**: WCAG 2.1 AA compliant, mobile-friendly navigation drawer, smooth scrolling, and keyboard accessible dialogs.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Markup**: Semantic HTML5 (Header, Nav, Main, Section, Article, Footer, Dialog)
+- **Styling**: Production Compiled CSS (Tailwind utilities, custom gradients, animations, glassmorphism)
+- **Scripting**: Pure Vanilla JavaScript (ES6+, zero runtime dependencies)
+- **Deployment**: Vercel & GitHub Pages ready (pure static hosting)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💻 Local Preview
+
+Run any static server or open `index.html` directly in your browser:
+
+```bash
+# Using Node / NPX
+npx serve .
+
+# Or using Python 3
+python -m http.server 3000
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
+
+---
+
+## 🌐 Live Website
+
+- **Production URL**: [https://denish-borad.vercel.app/](https://denish-borad.vercel.app/)
+- **GitHub**: [https://github.com/BoradDenish](https://github.com/BoradDenish)
+- **LinkedIn**: [https://linkedin.com/in/denish-borad-5249b1250](https://linkedin.com/in/denish-borad-5249b1250)
