@@ -1,0 +1,5 @@
+# robots.txt - https://denish-borad.vercel.app
+User-agent: *
+Allow: /
+
+Sitemap: https://denish-borad.vercel.app/sitemap.xml
