@@ -2,12 +2,31 @@
   "name": "portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "Denish Borad - Backend & Systems Engineer Portfolio (High Performance Static HTML for SEO)",
+  "type": "module",
+  "description": "Denish Borad - Python Backend & Systems Engineer Portfolio",
   "homepage": "https://denish-borad.vercel.app/",
   "scripts": {
-    "dev": "npx serve -l 3000 .",
-    "start": "npx serve -l 3000 .",
-    "preview": "npx serve ."
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "motion": "^12.4.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
   },
   "keywords": [
     "portfolio",
