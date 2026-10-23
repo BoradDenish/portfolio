@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Denish Borad Portfolio</title>
+    <script>
+      // Single Page Application routing for GitHub Pages
+      (function() {
+        var path = window.location.pathname;
+        var repo = '/portfolio';
+        var redirect = '';
+        if (path.indexOf(repo) === 0) {
+          var subpath = path.slice(repo.length);
+          if (subpath.indexOf('/') === 0) subpath = subpath.slice(1);
+          redirect = repo + '/#/' + subpath + window.location.search + window.location.hash;
+        } else {
+          redirect = '/#/' + (path.indexOf('/') === 0 ? path.slice(1) : path) + window.location.search + window.location.hash;
+        }
+        window.location.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body style="background:#080c14;color:#cbd5e1;font-family:sans-serif;padding:2rem;text-align:center;">
+    <p>Loading application...</p>
+  </body>
+</html>
