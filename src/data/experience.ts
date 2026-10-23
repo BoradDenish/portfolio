@@ -6,7 +6,7 @@ export const experience: ExperienceItem[] = [
     title: 'Backend Developer',
     company: 'Master Global Tech',
     location: 'Rajkot, Gujarat, India',
-    period: 'Jun 2024 — Present',
+    period: 'Jul 2026 — Present',
     type: 'Full-time',
     description: 'Backend developer architecting high-performance RESTful APIs, distributed microservices, and asynchronous background pipelines across enterprise web and cloud platforms.',
     highlights: [
@@ -33,7 +33,7 @@ export const experience: ExperienceItem[] = [
     title: 'Backend & Systems Engineer',
     company: 'Inlancer Technologies Pvt Ltd',
     location: 'Rajkot, Gujarat, India',
-    period: 'Aug 2022 — Jun 2024',
+    period: 'Aug 2022 — Jun 2026',
     type: 'Full-time',
     description: 'Lead backend and systems engineer architecting high-throughput distributed services, real-time IoT hardware telemetry pipelines, and cloud deployments across enterprise logistics, housing ERPs, dining platforms, and aquaculture.',
     highlights: [
