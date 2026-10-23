@@ -1,10 +1,26 @@
 # Deployment Guide — Denish Borad Portfolio
 
-This project is configured for automated zero-configuration deployment to **Vercel** and static hosting platforms.
+This project is configured for automated deployment to **GitHub Pages** and **Vercel**.
 
 ---
 
-## 1. Deploying to Vercel
+## 1. Deploying to GitHub Pages
+
+The repository contains an automated GitHub Actions deployment workflow at `.github/workflows/deploy.yml`.
+
+### One-Time Setup in GitHub Settings
+For the GitHub Action to deploy successfully, Pages must be enabled with the source set to **GitHub Actions**:
+1. Open your repository on GitHub: [github.com/BoradDenish/portfolio](https://github.com/BoradDenish/portfolio).
+2. Click **Settings** (top navigation tab).
+3. In the left sidebar, click **Pages** (under the *Code and automation* section).
+4. Under **Build and deployment** > **Source**, change the dropdown to **GitHub Actions**.
+5. Save changes.
+
+Whenever code is pushed to `main` (or when triggered manually via the **Run workflow** button under the **Actions** tab), GitHub Pages will build and deploy the application automatically.
+
+---
+
+## 2. Deploying to Vercel
 
 ### Option A: Via GitHub Integration (Recommended)
 1. Push your changes to GitHub on your main branch:
@@ -30,9 +46,11 @@ vercel --prod
 
 ---
 
-## 2. SPA Route Configuration
+## 3. SPA Route Configuration
 
-The repository includes a `vercel.json` file configuring SPA routing so direct visits to project pages like `https://denish-borad.vercel.app/projects/society-mitr` work seamlessly without 404 errors:
+The repository includes:
+- `vercel.json` file configuring SPA routing for Vercel.
+- `public/404.html` and `HashRouter` for GitHub Pages single-page routing without 404 errors.
 
 ```json
 {
@@ -45,7 +63,7 @@ The repository includes a `vercel.json` file configuring SPA routing so direct v
 
 ---
 
-## 3. Production Verification Checklist
+## 4. Production Verification Checklist
 
 - [x] TypeScript compiler check passed (`tsc`)
 - [x] Vite production bundle passed (`vite build`)
