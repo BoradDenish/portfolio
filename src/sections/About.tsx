@@ -44,7 +44,7 @@ export const About: React.FC = () => {
           {/* Left: Bio & Stats */}
           <div className="lg:col-span-6 space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed">
             <p>
-              I am a Python Backend Developer and Systems Engineer with 3+ years of professional experience building high-throughput production services, distributed task pipelines, and mission-critical IoT telemetry gateways at Inlancer Technologies.
+              I am a Python Backend Developer and Systems Engineer with 3+ years of professional experience building high-throughput production services, distributed task pipelines, and mission-critical IoT telemetry gateways across Master Global Tech and previously at Inlancer Technologies.
             </p>
             <p>
               My engineering approach prioritizes determinism, type safety, and clean separation of concerns. Whether engineering sub-millisecond resident ERP services in Rust, scaling asynchronous ASGI endpoints in FastAPI, or decoding raw TCP sensor frames from remote edge microcontrollers, I focus on building systems that remain resilient under real-world traffic spikes.

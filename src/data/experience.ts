@@ -2,11 +2,38 @@ import { ExperienceItem } from '../types';
 
 export const experience: ExperienceItem[] = [
   {
+    id: 'master-global-tech',
+    title: 'Backend Developer',
+    company: 'Master Global Tech',
+    location: 'Rajkot, Gujarat, India',
+    period: 'Jun 2024 — Present',
+    type: 'Full-time',
+    description: 'Backend developer architecting high-performance RESTful APIs, distributed microservices, and asynchronous background pipelines across enterprise web and cloud platforms.',
+    highlights: [
+      'Architecting and delivering production-ready backend services and REST APIs with Python (FastAPI, Django).',
+      'Implementing scalable asynchronous job queues and caching layers with Celery and Redis to handle peak system workloads.',
+      'Designing robust PostgreSQL & MySQL relational database schemas, query optimizations, and index tuning.',
+      'Containerizing microservices using Docker and orchestrating automated deployment pipelines with CI/CD.'
+    ],
+    skills: [
+      'Python',
+      'FastAPI',
+      'Django',
+      'PostgreSQL',
+      'MySQL',
+      'Redis',
+      'Celery',
+      'Docker',
+      'REST APIs',
+      'CI/CD'
+    ]
+  },
+  {
     id: 'inlancer-fulltime',
     title: 'Backend & Systems Engineer',
     company: 'Inlancer Technologies Pvt Ltd',
     location: 'Rajkot, Gujarat, India',
-    period: 'Aug 2022 — Present',
+    period: 'Aug 2022 — Jun 2024',
     type: 'Full-time',
     description: 'Lead backend and systems engineer architecting high-throughput distributed services, real-time IoT hardware telemetry pipelines, and cloud deployments across enterprise logistics, housing ERPs, dining platforms, and aquaculture.',
     highlights: [
